@@ -1,0 +1,214 @@
+{
+  "experiment": "TECH-01 controlled local sandbox concurrency/replay/revocation",
+  "started_at": "2026-11-01T08:17:53.017799+00:00",
+  "finished_at": "2026-11-01T08:17:55.875223+00:00",
+  "status": "PASS",
+  "environment": "local Docker Compose / PostgreSQL / local_simulator; synthetic requests",
+  "parallel_requests": 20,
+  "distinct_agent_api_keys": 2,
+  "amount_minor_each": 800000,
+  "daily_budget_minor": 2500000,
+  "approve": 3,
+  "deny": 17,
+  "authorized_minor": 2400000,
+  "remaining_minor": 100000,
+  "same_grant_parallel_submissions": 10,
+  "unique_executions_for_replayed_grant": 1,
+  "confirmed_simulated_transactions": 3,
+  "distinct_receipts": 3,
+  "after_revocation": "DENY / MANDATE_REVOKED",
+  "create_request_client_latency_ms": {
+    "p50": 530.11,
+    "p95": 692.91,
+    "max": 733.27
+  },
+  "elapsed_seconds": 2.86,
+  "limitations": [
+    "Client timing includes HTTP client setup and locking under controlled burst",
+    "Not independent developer usability testing",
+    "Not product demand or willingness-to-pay evidence",
+    "Not bank/provider external integration, performance SLO or load certification"
+  ],
+  "observations": [
+    {
+      "case": 0,
+      "intent_id": "b003c36f-1e8e-4daf-bdf3-f25d18e70c96",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 429.71
+    },
+    {
+      "case": 1,
+      "intent_id": "da81a3ee-b64f-4000-bdef-cce967c926b5",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 481.2
+    },
+    {
+      "case": 2,
+      "intent_id": "09dc6d62-5acf-4fd6-a674-3844e039529d",
+      "decision": "APPROVE",
+      "reason_codes": [
+        "POLICY_MATCH"
+      ],
+      "latency_ms": 178.93
+    },
+    {
+      "case": 3,
+      "intent_id": "bbafbadc-a893-45f1-b350-635a4e7cf7f1",
+      "decision": "APPROVE",
+      "reason_codes": [
+        "POLICY_MATCH"
+      ],
+      "latency_ms": 94.27
+    },
+    {
+      "case": 4,
+      "intent_id": "380db214-a897-4135-8cb1-d4a687f71b7c",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 454.91
+    },
+    {
+      "case": 5,
+      "intent_id": "86a20506-6db0-4e53-9e3c-a5cd755a293e",
+      "decision": "APPROVE",
+      "reason_codes": [
+        "POLICY_MATCH"
+      ],
+      "latency_ms": 374.1
+    },
+    {
+      "case": 6,
+      "intent_id": "1d045887-e262-4552-9db4-d7a14b816384",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 494.57
+    },
+    {
+      "case": 7,
+      "intent_id": "f8f42ff6-b140-4bc2-9326-1687f0cdfeba",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 565.82
+    },
+    {
+      "case": 8,
+      "intent_id": "cfc56c3e-607d-44ec-aed7-294676144697",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 530.6
+    },
+    {
+      "case": 9,
+      "intent_id": "a79eef7b-1a3a-4948-b129-01ceb5c6d6b5",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 642.9
+    },
+    {
+      "case": 10,
+      "intent_id": "8121d4cd-7288-4edf-9415-fbd9fb0a031b",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 575.48
+    },
+    {
+      "case": 11,
+      "intent_id": "86cf3c2b-6399-4f8b-aace-c0a4ab41455d",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 479.01
+    },
+    {
+      "case": 12,
+      "intent_id": "3a8cad5d-9449-4a77-af87-034fa72efb5d",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 733.27
+    },
+    {
+      "case": 13,
+      "intent_id": "94fba745-4c84-4b06-89f8-58b5e3965881",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 692.91
+    },
+    {
+      "case": 14,
+      "intent_id": "ded4961c-3ad0-4a62-9662-563b06510fc2",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 615.42
+    },
+    {
+      "case": 15,
+      "intent_id": "0280a527-849e-418e-be07-bc413dd1c1ad",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 637.64
+    },
+    {
+      "case": 16,
+      "intent_id": "3e6d3a1c-f51d-4bf7-a0ea-3a0a9a73228e",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 529.62
+    },
+    {
+      "case": 17,
+      "intent_id": "d864d667-aae4-4fbb-a727-611597ff18ab",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 499.53
+    },
+    {
+      "case": 18,
+      "intent_id": "fa6e963f-1223-4ec9-8d48-185718b0cab6",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 608.93
+    },
+    {
+      "case": 19,
+      "intent_id": "c58fcc49-177b-4152-a0d7-46d874dfab20",
+      "decision": "DENY",
+      "reason_codes": [
+        "DAILY_LIMIT"
+      ],
+      "latency_ms": 666.98
+    }
+  ]
+}

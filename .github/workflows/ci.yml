@@ -1,0 +1,55 @@
+name: AgentPass CI
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: agentpass
+          POSTGRES_PASSWORD: local-sandbox-only
+          POSTGRES_DB: agentpass
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U agentpass" --health-interval 3s --health-timeout 3s --health-retries 20
+    env:
+      DATABASE_URL: postgresql+psycopg://agentpass:local-sandbox-only@localhost:5432/agentpass
+      TEST_DATABASE_URL: postgresql+psycopg://agentpass:local-sandbox-only@localhost:5432/agentpass_test
+      PYTHONPATH: apps/api
+      DEMO_PASSWORD: AgentPass-demo-2026!
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "24", cache: npm }
+      - run: pip install -r apps/api/requirements.lock
+      - run: python infra/bootstrap.py
+      - run: npm ci
+      - run: npm run typecheck && npm run build
+      - name: Migrate sandbox and test databases
+        run: |
+          python -c "import psycopg; c=psycopg.connect('postgresql://agentpass:local-sandbox-only@localhost:5432/agentpass',autocommit=True); c.execute('CREATE DATABASE agentpass_test'); c.close()"
+          alembic -c apps/api/alembic.ini upgrade head
+          DATABASE_URL="$TEST_DATABASE_URL" alembic -c apps/api/alembic.ini upgrade head
+      - run: pytest apps/api/tests -q
+      - run: npx playwright install --with-deps chromium
+      - name: Start local services
+        run: |
+          uvicorn agentpass.main:app --host 0.0.0.0 --port 8000 > /tmp/agentpass-api.log 2>&1 &
+          python -m agentpass.webhooks > /tmp/agentpass-worker.log 2>&1 &
+          npm run start -w apps/web > /tmp/agentpass-web.log 2>&1 &
+          python infra/wait_ready.py
+      - run: python infra/smoke.py
+      - name: Verify additive SDK execution workflow
+        run: python infra/verify-pilot-sdk.py
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: verification-reports
+          path: |
+            apps/web/test-results
+            apps/web/playwright-report
+            /tmp/agentpass-*.log

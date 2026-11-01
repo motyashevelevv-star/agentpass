@@ -1,0 +1,86 @@
+{
+  "participant_type": "AI_ROLEPLAY",
+  "human_participants": 0,
+  "participants": [
+    {
+      "id": "D01",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Технический лид shopping-агента",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "D02",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Руководитель продукта B2B-закупок",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "D03",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Основатель AI-shopping стартапа",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "D04",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Инженер платформы и безопасности",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "D05",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Руководитель FinOps и операционного бюджета",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "D06",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Независимый разработчик AI-интеграций",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "D07",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Руководитель разработки marketplace-агента",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "B01",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Архитектор банковских API",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "B02",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Специалист банковского IAM и безопасности приложений",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    },
+    {
+      "id": "B03",
+      "participant_type": "ИИ-агент",
+      "assigned_role": "Руководитель платёжных операций и сверки",
+      "source_type": "AI_ROLEPLAY",
+      "human_respondent": false,
+      "questions_answered": 12
+    }
+  ]
+}

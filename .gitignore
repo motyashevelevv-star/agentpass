@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+*.log
+*.pid
+playwright-report/
+test-results/
+*.tsbuildinfo
+packages/sdk-typescript/dist/
+
+.ruff_cache/

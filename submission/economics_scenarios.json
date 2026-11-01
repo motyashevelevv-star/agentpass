@@ -1,0 +1,500 @@
+{
+  "currency": "RUB",
+  "initial_cash": 4000000,
+  "assumptions": [
+    "All numbers are unverified pricing/cost/timing hypotheses",
+    "50% pilot cash at start and 50% next month; pilot revenue simplified to start month",
+    "No VAT/taxes/depreciation/financing; no outstanding receivable after M12 in these scenarios",
+    "No confirmed clients, interviews, signed contracts or investments"
+  ],
+  "scenarios": [
+    {
+      "id": "downside",
+      "name": "Задержка спроса и ценовое давление",
+      "pilot_price": 400000,
+      "pilot_cost": 200000,
+      "license": 120000,
+      "variable_per_org": 40000,
+      "fixed_monthly": 480000,
+      "security_once": 600000,
+      "pilot_starts": [
+        6
+      ],
+      "active": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "monthly": [
+        {
+          "month": 1,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 3520000.0
+        },
+        {
+          "month": 2,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 1080000,
+          "result": -1080000,
+          "cash_end": 2440000.0
+        },
+        {
+          "month": 3,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 1960000.0
+        },
+        {
+          "month": 4,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 1480000.0
+        },
+        {
+          "month": 5,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 1000000.0
+        },
+        {
+          "month": 6,
+          "active_licenses": 0,
+          "new_pilots": 1,
+          "revenue": 400000,
+          "received": 200000.0,
+          "cost": 680000,
+          "result": -280000,
+          "cash_end": 520000.0
+        },
+        {
+          "month": 7,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 200000.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 240000.0
+        },
+        {
+          "month": 8,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": -240000.0
+        },
+        {
+          "month": 9,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": -720000.0
+        },
+        {
+          "month": 10,
+          "active_licenses": 1,
+          "new_pilots": 0,
+          "revenue": 120000,
+          "received": 120000.0,
+          "cost": 520000,
+          "result": -400000,
+          "cash_end": -1120000.0
+        },
+        {
+          "month": 11,
+          "active_licenses": 1,
+          "new_pilots": 0,
+          "revenue": 120000,
+          "received": 120000.0,
+          "cost": 520000,
+          "result": -400000,
+          "cash_end": -1520000.0
+        },
+        {
+          "month": 12,
+          "active_licenses": 1,
+          "new_pilots": 0,
+          "revenue": 120000,
+          "received": 120000.0,
+          "cost": 520000,
+          "result": -400000,
+          "cash_end": -1920000.0
+        }
+      ],
+      "summary": {
+        "revenue_12m": 760000,
+        "cost_12m": 6680000,
+        "result_12m": -5920000,
+        "cash_end_12m": -1920000.0,
+        "min_cash": -1920000.0,
+        "first_negative_cash_month": 8,
+        "license_contribution": 80000,
+        "license_break_even_organizations": 6,
+        "month12_recurring_result": -400000
+      },
+      "status": "SCENARIO_ASSUMPTIONS_NOT_SALES"
+    },
+    {
+      "id": "base",
+      "name": "Базовый enterprise-сценарий из текущей модели",
+      "pilot_price": 600000,
+      "pilot_cost": 200000,
+      "license": 180000,
+      "variable_per_org": 30000,
+      "fixed_monthly": 480000,
+      "security_once": 300000,
+      "pilot_starts": [
+        3,
+        6,
+        9
+      ],
+      "active": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "monthly": [
+        {
+          "month": 1,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 3520000.0
+        },
+        {
+          "month": 2,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 780000,
+          "result": -780000,
+          "cash_end": 2740000.0
+        },
+        {
+          "month": 3,
+          "active_licenses": 0,
+          "new_pilots": 1,
+          "revenue": 600000,
+          "received": 300000.0,
+          "cost": 680000,
+          "result": -80000,
+          "cash_end": 2360000.0
+        },
+        {
+          "month": 4,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 300000.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 2180000.0
+        },
+        {
+          "month": 5,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 480000,
+          "result": -480000,
+          "cash_end": 1700000.0
+        },
+        {
+          "month": 6,
+          "active_licenses": 0,
+          "new_pilots": 1,
+          "revenue": 600000,
+          "received": 300000.0,
+          "cost": 680000,
+          "result": -80000,
+          "cash_end": 1320000.0
+        },
+        {
+          "month": 7,
+          "active_licenses": 1,
+          "new_pilots": 0,
+          "revenue": 180000,
+          "received": 480000.0,
+          "cost": 510000,
+          "result": -330000,
+          "cash_end": 1290000.0
+        },
+        {
+          "month": 8,
+          "active_licenses": 1,
+          "new_pilots": 0,
+          "revenue": 180000,
+          "received": 180000.0,
+          "cost": 510000,
+          "result": -330000,
+          "cash_end": 960000.0
+        },
+        {
+          "month": 9,
+          "active_licenses": 1,
+          "new_pilots": 1,
+          "revenue": 780000,
+          "received": 480000.0,
+          "cost": 710000,
+          "result": 70000,
+          "cash_end": 730000.0
+        },
+        {
+          "month": 10,
+          "active_licenses": 2,
+          "new_pilots": 0,
+          "revenue": 360000,
+          "received": 660000.0,
+          "cost": 540000,
+          "result": -180000,
+          "cash_end": 850000.0
+        },
+        {
+          "month": 11,
+          "active_licenses": 2,
+          "new_pilots": 0,
+          "revenue": 360000,
+          "received": 360000.0,
+          "cost": 540000,
+          "result": -180000,
+          "cash_end": 670000.0
+        },
+        {
+          "month": 12,
+          "active_licenses": 3,
+          "new_pilots": 0,
+          "revenue": 540000,
+          "received": 540000.0,
+          "cost": 570000,
+          "result": -30000,
+          "cash_end": 640000.0
+        }
+      ],
+      "summary": {
+        "revenue_12m": 3600000,
+        "cost_12m": 6960000,
+        "result_12m": -3360000,
+        "cash_end_12m": 640000.0,
+        "min_cash": 640000.0,
+        "first_negative_cash_month": null,
+        "license_contribution": 150000,
+        "license_break_even_organizations": 4,
+        "month12_recurring_result": -30000
+      },
+      "status": "SCENARIO_ASSUMPTIONS_NOT_SALES"
+    },
+    {
+      "id": "growth_with_capacity",
+      "name": "Более высокий спрос с увеличением delivery capacity",
+      "pilot_price": 800000,
+      "pilot_cost": 250000,
+      "license": 240000,
+      "variable_per_org": 35000,
+      "fixed_monthly": 650000,
+      "security_once": 500000,
+      "pilot_starts": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "active": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        4
+      ],
+      "monthly": [
+        {
+          "month": 1,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 650000,
+          "result": -650000,
+          "cash_end": 3350000.0
+        },
+        {
+          "month": 2,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 0.0,
+          "cost": 1150000,
+          "result": -1150000,
+          "cash_end": 2200000.0
+        },
+        {
+          "month": 3,
+          "active_licenses": 0,
+          "new_pilots": 1,
+          "revenue": 800000,
+          "received": 400000.0,
+          "cost": 900000,
+          "result": -100000,
+          "cash_end": 1700000.0
+        },
+        {
+          "month": 4,
+          "active_licenses": 0,
+          "new_pilots": 0,
+          "revenue": 0,
+          "received": 400000.0,
+          "cost": 650000,
+          "result": -650000,
+          "cash_end": 1450000.0
+        },
+        {
+          "month": 5,
+          "active_licenses": 0,
+          "new_pilots": 1,
+          "revenue": 800000,
+          "received": 400000.0,
+          "cost": 900000,
+          "result": -100000,
+          "cash_end": 950000.0
+        },
+        {
+          "month": 6,
+          "active_licenses": 1,
+          "new_pilots": 0,
+          "revenue": 240000,
+          "received": 640000.0,
+          "cost": 685000,
+          "result": -445000,
+          "cash_end": 905000.0
+        },
+        {
+          "month": 7,
+          "active_licenses": 1,
+          "new_pilots": 1,
+          "revenue": 1040000,
+          "received": 640000.0,
+          "cost": 935000,
+          "result": 105000,
+          "cash_end": 610000.0
+        },
+        {
+          "month": 8,
+          "active_licenses": 2,
+          "new_pilots": 0,
+          "revenue": 480000,
+          "received": 880000.0,
+          "cost": 720000,
+          "result": -240000,
+          "cash_end": 770000.0
+        },
+        {
+          "month": 9,
+          "active_licenses": 2,
+          "new_pilots": 1,
+          "revenue": 1280000,
+          "received": 880000.0,
+          "cost": 970000,
+          "result": 310000,
+          "cash_end": 680000.0
+        },
+        {
+          "month": 10,
+          "active_licenses": 3,
+          "new_pilots": 0,
+          "revenue": 720000,
+          "received": 1120000.0,
+          "cost": 755000,
+          "result": -35000,
+          "cash_end": 1045000.0
+        },
+        {
+          "month": 11,
+          "active_licenses": 4,
+          "new_pilots": 0,
+          "revenue": 960000,
+          "received": 960000.0,
+          "cost": 790000,
+          "result": 170000,
+          "cash_end": 1215000.0
+        },
+        {
+          "month": 12,
+          "active_licenses": 4,
+          "new_pilots": 0,
+          "revenue": 960000,
+          "received": 960000.0,
+          "cost": 790000,
+          "result": 170000,
+          "cash_end": 1385000.0
+        }
+      ],
+      "summary": {
+        "revenue_12m": 7280000,
+        "cost_12m": 9895000,
+        "result_12m": -2615000,
+        "cash_end_12m": 1385000.0,
+        "min_cash": 610000.0,
+        "first_negative_cash_month": null,
+        "license_contribution": 205000,
+        "license_break_even_organizations": 4,
+        "month12_recurring_result": 170000
+      },
+      "status": "SCENARIO_ASSUMPTIONS_NOT_SALES"
+    }
+  ]
+}

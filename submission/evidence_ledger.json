@@ -1,0 +1,284 @@
+{
+  "as_of": "2026-11-01",
+  "method": "desk research of primary sources; no customer interviews or vendor sandbox executions",
+  "sources": [
+    {
+      "id": "S1",
+      "entity": "Visa Intelligent Commerce",
+      "category": "network program and API",
+      "url": "https://developer.visa.com/docs/visa-intelligent-commerce",
+      "accessed": "2026-11-01",
+      "evidence_type": "official technical documentation",
+      "verified_claims": [
+        "Consumer-approved purchase instructions, agent validation and tokenized credentials are described",
+        "Production requires product onboarding"
+      ],
+      "not_verified": [
+        "AgentPass integration",
+        "commercial eligibility of a particular entity",
+        "deployment quality"
+      ]
+    },
+    {
+      "id": "S2",
+      "entity": "Mastercard Agent Pay",
+      "category": "payment network infrastructure",
+      "url": "https://www.mastercard.com/global/en/business/artificial-intelligence/mastercard-agent-pay.html",
+      "accessed": "2026-11-01",
+      "evidence_type": "vendor product page",
+      "verified_claims": [
+        "Registered agents, network tokens and verified user intent are product claims"
+      ],
+      "not_verified": [
+        "independent performance/security validation",
+        "public API access for AgentPass"
+      ]
+    },
+    {
+      "id": "S3",
+      "entity": "AP2 v0.2",
+      "category": "open authorization/payment security specification",
+      "url": "https://ap2-protocol.org/ap2/specification/",
+      "repository_url": "https://github.com/google-agentic-commerce/AP2/blob/main/docs/ap2/specification.md",
+      "accessed": "2026-11-01",
+      "evidence_type": "official normative specification",
+      "verified_claims": [
+        "Version 0.2 names Checkout Mandate and Payment Mandate",
+        "Human-present and autonomous modes are described",
+        "Validation/processing must be deterministic"
+      ],
+      "not_verified": [
+        "AgentPass AP2 conformance or interoperability"
+      ]
+    },
+    {
+      "id": "S4",
+      "entity": "Agentic Commerce Protocol",
+      "category": "commerce protocol",
+      "url": "https://www.agenticcommerce.dev/docs/concepts/architecture",
+      "accessed": "2026-11-01",
+      "evidence_type": "official protocol documentation",
+      "verified_claims": [
+        "ACP separates checkout lifecycle from delegated payment",
+        "Allowance constraints include amount, currency, expiry and merchant"
+      ],
+      "not_verified": [
+        "AgentPass ACP implementation or compatibility"
+      ]
+    },
+    {
+      "id": "S5",
+      "entity": "Stripe Shared Payment Tokens",
+      "category": "scoped payment credential primitive",
+      "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=agent",
+      "accessed": "2026-11-01",
+      "evidence_type": "official implementation guide",
+      "verified_claims": [
+        "Seller scope and usage_limits currency/max_amount/expires_at are documented",
+        "Revoke and webhook state changes are documented",
+        "The guide exposes a preview API version and a supported-country list"
+      ],
+      "not_verified": [
+        "a particular customer's eligibility",
+        "AgentPass connection"
+      ]
+    },
+    {
+      "id": "S6",
+      "entity": "Payman AI",
+      "category": "banking agent orchestration",
+      "url": "https://paymanai.com/reports/ai-agents-move-money-safely",
+      "accessed": "2026-11-01",
+      "evidence_type": "vendor technical positioning/guide",
+      "verified_claims": [
+        "Vendor explicitly describes bank-defined limits/approvals, policy outside LLM and separate execution",
+        "Audit and bank-controlled stop are stated"
+      ],
+      "not_verified": [
+        "implementation, certifications, deployment timelines or customer results independently"
+      ]
+    },
+    {
+      "id": "S7",
+      "entity": "Skyfire",
+      "category": "agent identity and payment network",
+      "url": "https://skyfire.xyz/product/",
+      "accessed": "2026-11-01",
+      "evidence_type": "vendor product page",
+      "verified_claims": [
+        "Per-agent spending limits and agent identity/verification are advertised"
+      ],
+      "not_verified": [
+        "full approval workflow",
+        "entity/country eligibility",
+        "production quality"
+      ]
+    },
+    {
+      "id": "S8",
+      "entity": "Skyfire PAY token",
+      "category": "payment token schema",
+      "url": "https://docs.skyfire.xyz/docs/pay-token",
+      "accessed": "2026-11-01",
+      "evidence_type": "official technical documentation",
+      "verified_claims": [
+        "amt, cur and stp claims are documented",
+        "Optional mnr describes a maximum request count for pay_per_use"
+      ],
+      "not_verified": [
+        "AgentPass implementation or supported approval semantics"
+      ]
+    },
+    {
+      "id": "S9",
+      "entity": "Pink Agentic AI Payments",
+      "category": "spend governance application",
+      "url": "https://pinkwallet.org/agentic/",
+      "page_date": "2026-09-30",
+      "accessed": "2026-11-01",
+      "evidence_type": "vendor product/status page",
+      "verified_claims": [
+        "Vendor describes allow/ask/block decisions, budgets, approvals and working sandbox",
+        "Page explicitly distinguishes unavailable production from sandbox"
+      ],
+      "not_verified": [
+        "sandbox execution by this research",
+        "security or production capability independently"
+      ]
+    },
+    {
+      "id": "S10",
+      "entity": "AP2 issue 207",
+      "category": "external developer feature request",
+      "url": "https://github.com/google-agentic-commerce/AP2/issues/207",
+      "published_date": "2026-03-31",
+      "accessed": "2026-11-01",
+      "evidence_type": "participant report in official repository; qualitative secondary data",
+      "observed_page_state": "Open",
+      "verified_claims": [
+        "Participant asks who enforces cumulative budgets across merchants"
+      ],
+      "not_verified": [
+        "author commercial role",
+        "problem prevalence",
+        "WTP",
+        "current v0.2 unresolved status"
+      ]
+    },
+    {
+      "id": "S11",
+      "entity": "AP2 issue 386",
+      "category": "external developer feature request",
+      "url": "https://github.com/google-agentic-commerce/AP2/issues/386",
+      "published_date": "2026-10-21",
+      "accessed": "2026-11-01",
+      "evidence_type": "participant report in official repository; qualitative secondary data",
+      "observed_page_state": "Open",
+      "verified_claims": [
+        "Participant requests revocation/status checks for standing open mandates"
+      ],
+      "not_verified": [
+        "independent vulnerability validation",
+        "problem prevalence",
+        "buyer intent",
+        "WTP"
+      ]
+    },
+    {
+      "id": "S12",
+      "entity": "ACP issue 120",
+      "category": "external protocol enhancement proposal",
+      "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/120",
+      "published_date": "2026-02-08",
+      "accessed": "2026-11-01",
+      "evidence_type": "participant proposal in official repository; qualitative secondary data",
+      "observed_page_state": "Open in retrieved page; see later release context S13",
+      "verified_claims": [
+        "Proposal describes safe retries, request equivalence and TTL needs"
+      ],
+      "not_verified": [
+        "current unresolved gap",
+        "market prevalence",
+        "paid demand"
+      ]
+    },
+    {
+      "id": "S13",
+      "entity": "ACP 2026-04-17 changelog",
+      "category": "official protocol release document",
+      "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/changelog/2026-04-17.md",
+      "published_date": "2026-04-17",
+      "accessed": "2026-11-01",
+      "evidence_type": "official repository changelog",
+      "verified_claims": [
+        "Mandatory idempotency headers and explicit collision/conflict responses are documented",
+        "Release notes state Closes issue #120"
+      ],
+      "not_verified": [
+        "all implementers have upgraded",
+        "AgentPass ACP compatibility"
+      ]
+    }
+  ],
+  "research_findings": [
+    {
+      "id": "F1",
+      "type": "supported synthesis",
+      "claim": "Three-way decisions, limits and scoped credentials are established competitor features, not demonstrated AgentPass uniqueness",
+      "sources": [
+        "S4",
+        "S5",
+        "S6",
+        "S9"
+      ]
+    },
+    {
+      "id": "F2",
+      "type": "inference to test",
+      "claim": "A developer-led design partner may be a narrower initial ICP than a bank-wide purchase",
+      "basis": "current product maturity and prior developer-led plan; customer evidence absent"
+    },
+    {
+      "id": "F3",
+      "type": "unverified",
+      "claim": "Demand, paid conversion and market size for AgentPass are not established by these sources"
+    },
+    {
+      "id": "F4",
+      "type": "pricing distinction",
+      "claim": "Prior USD developer plan and RUB enterprise pilot scenario are different unvalidated SKU hypotheses, not one proven market price",
+      "basis": "prior project artifacts reported by parent researcher; not a competitor price study"
+    },
+    {
+      "id": "F5",
+      "type": "external qualitative signal",
+      "claim": "Official repository discussions document developer questions about cumulative budgets, mandate revocation and safe retries",
+      "sources": [
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "limits": "Not our interviews, not buyer validation, not representative"
+    },
+    {
+      "id": "F6",
+      "type": "counter-evidence to uniqueness",
+      "claim": "ACP release notes show idempotency enhancement already incorporated; historic issue must not be represented as an unsolved unique AgentPass advantage",
+      "sources": [
+        "S12",
+        "S13"
+      ]
+    }
+  ],
+  "excluded_as_proof": [
+    "secondary vendor comparison rankings",
+    "worldwide payment volumes as AgentPass TAM",
+    "AI usage counts as willingness to pay",
+    "simulated interviews as customer evidence"
+  ],
+  "access_notes": [
+    "The guessed AP2 /specification/ path returned 404; the verified canonical route is /ap2/specification/",
+    "Searches returning no result were not interpreted as feature absence",
+    "No outreach messages were sent"
+  ]
+}

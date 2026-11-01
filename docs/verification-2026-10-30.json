@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-30",
+  "source_sha256": "d5f15c2410ab94d671bd1f7e68c3b43fc54edce5ecd70a80742c5650fc4a674d",
+  "baseline": {
+    "pytest": 62,
+    "playwright": 6,
+    "http_smoke": 14,
+    "typecheck": "passed",
+    "build": "passed",
+    "git": "ac9b15b"
+  },
+  "current": {
+    "pytest": 114,
+    "pytest_new_tests": 52,
+    "pytest_warning": "Starlette TestClient/httpx deprecation; no failures",
+    "playwright": 8,
+    "http_smoke": 14,
+    "sdk_execution_checks": 16,
+    "typecheck": "passed",
+    "production_build": "passed",
+    "alembic_check": "no new operations",
+    "migration_revision": "dbfc8b45cfa9",
+    "compose_services_healthy": 4,
+    "compose_http_smoke": 14,
+    "compose_sdk_checks": 16,
+    "external_agent_example": "local provider succeeded",
+    "basic_restore": "passed on isolated new database"
+  },
+  "commands": [
+    "PYTHONPATH=apps/api .venv/bin/pytest apps/api/tests -q",
+    "npm run typecheck",
+    "npm run build",
+    "PLAYWRIGHT_CHROMIUM_PATH=/usr/bin/chromium npm run test:e2e",
+    "PYTHONPATH=apps/api .venv/bin/alembic -c apps/api/alembic.ini check",
+    ".venv/bin/python infra/smoke.py",
+    ".venv/bin/python infra/verify-pilot-sdk.py"
+  ],
+  "not_verified": [
+    "YooKassa external credentials/connection/checkout",
+    "bank integration",
+    "enterprise SSO login",
+    "independent security assessment",
+    "HA/load SLO/PITR/DR/RPO/RTO",
+    "remote GitHub Actions run"
+  ],
+  "notes": [
+    "No real payments or card credentials used",
+    "Local HTTP/provider/database tests do not certify bank production readiness",
+    "Initial E2E failures and fixes documented in PILOT_READINESS.md"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "as_of": "2026-11-01",
+  "title": "AgentPass: candidate shortlist for developer/product discovery",
+  "method": "Desk research of public official product pages and first-party ecosystem announcements. No accounts created, checkout executed, outreach sent, personal contact data collected, or primary interviews conducted.",
+  "status": "CANDIDATE_SHORTLIST_ONLY",
+  "counts": {"candidates": 5, "qualified": 0, "contacted": 0, "recruited": 0, "interviewed": 0, "validated_buyers": 0},
+  "global_limits": [
+    "Public product descriptions establish a workflow claim, not a need for AgentPass or willingness to pay.",
+    "Company headcount, SME classification, available integration budget, current incidents and purchasing authority are unknown for every candidate.",
+    "All candidates operate international workflows. Russian availability, contracting, payment rails, RUB requirements and data-residency compatibility have not been verified.",
+    "Existing payment partners and native procurement policy controls can eliminate the proposed need entirely.",
+    "Public contact or community pages are routing entrypoints, not proof that the relevant product owner can be reached.",
+    "No direct payment/policy infrastructure competitors such as Payman, Pink, Skyfire, Nekuda or Rye are counted as prospective buyers."
+  ],
+  "candidates": [
+    {
+      "id": "RC1",
+      "organization": "BeyondStyle",
+      "priority": 1,
+      "segment": "Consumer shopping-agent product team",
+      "screening_state": "NOT_QUALIFIED",
+      "observed_workflow": "Official FAQ describes Buy with ShopAgent: agents process an order with partner retailers, apply discounts, handle checkout using supplied payment information and track the order. A separate current product page describes checkout with ShopAgent.",
+      "evidence": [
+        {"url": "https://www.beyondstyle.us/faqs/", "kind": "official product FAQ", "access": "opened 2026-11-01", "supports": "Shopping agent performs checkout and order tracking; ordinary Shop Now referral flow is a separate option."},
+        {"url": "https://www.beyondstyle.us/ai-shopping-agent/", "kind": "official product page", "access": "opened 2026-11-01", "supports": "Checkout with ShopAgent product is publicly described."},
+        {"url": "https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx", "kind": "official Visa ecosystem announcement, December 2025", "access": "opened 2026-11-01", "supports": "Visa describes PayOS enabling BeyondStyle agent-driven checkout at Jomashop in an early pilot; this is historical partner evidence, not a current independent execution test."}
+      ],
+      "fit_hypothesis": "A product owner with an actual cross-merchant checkout workflow could explain how policy, checkout retries, human consent and execution evidence are currently separated. A separate permission layer is useful only if existing PayOS/native controls leave a concrete gap.",
+      "target_roles": ["Product lead for ShopAgent/checkout", "Engineering lead for agent checkout and payment integrations"],
+      "public_entrypoints": [{"url": "https://www.beyondstyle.us/contactus/", "kind": "official company contact page", "access": "opened 2026-11-01"}],
+      "qualifying_questions": ["Is the current workflow still user-click initiated, or can a standing mandate initiate later purchases?", "Which exact limit, revocation, retry or approval problem is not already solved by the existing payment stack?", "Can a product engineer share a redacted real workflow and own a sandbox experiment?"],
+      "disqualifiers": ["Existing payment partner and native controls already cover the problem.", "No delegated financial authority beyond a single user-confirmed checkout.", "Only a merchant-referral workflow is in scope for the team available for research."],
+      "geography_access_rub": "International fashion shopping; Visa evidence concerns a U.S. pilot. Russian access, legal contracting and RUB support are NOT VERIFIED.",
+      "unknowns": ["Company size", "Budget", "Unmet need", "Willingness to pay", "Current partner API access", "Present-day checkout availability by market"],
+      "recruitment_purpose": "Primary developer/product problem interview, then qualification for a non-monetary sandbox design-partner experiment. No purchase intent is inferred."
+    },
+    {
+      "id": "RC2",
+      "organization": "Price.com",
+      "priority": 2,
+      "segment": "Shopping-agent and automated checkout product team",
+      "screening_state": "NOT_QUALIFIED",
+      "observed_workflow": "The official homepage indexed by web search describes free AI Shopping and a Pro Buy with AI feature with automated coupons and one-click checkout. Visa's first-party ecosystem announcement describes a Henry Labs integration of checkout into Price.com and purchase automation at Honeylove.",
+      "evidence": [
+        {"url": "https://price.com/", "kind": "official product homepage", "access": "official-page search extract reviewed 2026-11-01; direct opening failed in research tool", "supports": "AI Shopping discovery is distinguished from Pro checkout automation; this vendor claim was not exercised."},
+        {"url": "https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx", "kind": "official Visa ecosystem announcement, December 2025", "access": "opened 2026-11-01", "supports": "Nekuda enables Henry Labs to integrate checkout into Price.com; historical closed-beta evidence, not proof of current general availability."}
+      ],
+      "fit_hypothesis": "A comparison-to-checkout journey offers a concrete place to test whether the requested merchant, final amount, discount changes and execution result need an independent authorization record. Need and integration surface remain unconfirmed.",
+      "target_roles": ["Product owner for AI Shopping/Buy with AI", "Engineering lead for checkout automation", "Partner integration owner, if the workflow is operated by a separate team"],
+      "public_entrypoints": [{"url": "https://help.price.com/", "kind": "official help center with company/contact-support routing", "access": "official-page search extract reviewed 2026-11-01; direct opening failed in research tool"}],
+      "qualifying_questions": ["Who owns the buying-agent execution path today: Price.com, Henry Labs or another partner?", "How are final price changes, retries after timeout and repeated checkout submissions handled?", "Is there a standing delegated budget or only one user-confirmed order?"],
+      "disqualifiers": ["A partner owns the whole payment and authority path; the product team cannot integrate another control layer.", "Existing token, idempotency and approval controls suffice.", "The accessible team only owns comparison/cashback, not buying automation."],
+      "geography_access_rub": "Visa partner evidence concerns a U.S. closed beta. Exact current geography, Russian accessibility and RUB workflows are NOT VERIFIED.",
+      "unknowns": ["Company size", "Budget", "Unmet need", "Willingness to pay", "Current production checkout scope", "Integration owner"],
+      "recruitment_purpose": "Primary developer/product workflow interview; qualify ownership before proposing a design-partner experiment."
+    },
+    {
+      "id": "RC3",
+      "organization": "Gensmo",
+      "priority": 3,
+      "segment": "AI styling/shopping product team",
+      "screening_state": "NOT_QUALIFIED",
+      "observed_workflow": "Official homepage describes an AI stylist and try-on product. Its enterprise product page describes a Fabrique catalogue/styling integration. Visa separately describes a Gensmo-to-Fabrique purchase flow through Nekuda and Rye checkout API.",
+      "evidence": [
+        {"url": "https://gensmo.com/", "kind": "official product homepage", "access": "opened 2026-11-01", "supports": "An actual AI shopping/styling product exists; homepage alone does not establish autonomous payment authority."},
+        {"url": "https://gensmo.com/enterprise-solution", "kind": "official enterprise product page", "access": "opened 2026-11-01", "supports": "The vendor describes a Fabrique catalogue/styling workflow."},
+        {"url": "https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx", "kind": "official Visa ecosystem announcement, December 2025", "access": "opened 2026-11-01", "supports": "Visa describes a single-tap Gensmo/Fabrique purchase flow via Nekuda and Rye; current general availability is not established."}
+      ],
+      "fit_hypothesis": "A styling-to-purchase journey could reveal which consent record binds the selected item, merchant, amount and later execution. The presence of established checkout partners makes replacement and demand uncertain.",
+      "target_roles": ["Product lead for shopping or enterprise commerce integrations", "Engineering lead for checkout/partner integrations"],
+      "public_entrypoints": [{"url": "https://gensmo.com/enterprise-solution", "kind": "official enterprise product page with Contact Us navigation", "access": "opened 2026-11-01"}],
+      "qualifying_questions": ["Does the team own payment authorization, or only product discovery and a partner checkout handoff?", "What happens if SKU, final amount or merchant changes after the user selects the outfit?", "What present-day gap remains after Nekuda/Rye controls?"],
+      "disqualifiers": ["Discovery/try-on team has no payment-execution integration surface.", "Single merchant, single click and existing partner consent are sufficient.", "Historical pilot is no longer active or not accessible to the product team."],
+      "geography_access_rub": "International fashion product; Visa evidence is within U.S. early pilots. Russian access, contracting, available test API and RUB scope are NOT VERIFIED.",
+      "unknowns": ["Company size", "Budget", "Unmet need", "Willingness to pay", "Current checkout partnership status", "Access to payment implementation team"],
+      "recruitment_purpose": "Primary product/developer interview about a verified historical shopping-to-checkout workflow; not a claim of prospective customer interest."
+    },
+    {
+      "id": "RC4",
+      "organization": "Lio",
+      "priority": 4,
+      "segment": "Procurement-agent product/integration team; adjacent segment",
+      "screening_state": "NOT_QUALIFIED_ADJACENT_SEGMENT",
+      "observed_workflow": "Official product page describes a multi-agent procurement system. Its official customer story describes guided buying, choosing the purchasing channel, applying policy and producing a requisition SAP can process.",
+      "evidence": [
+        {"url": "https://www.lio.ai/", "kind": "official product homepage", "access": "opened 2026-11-01", "supports": "Agents are described as executing operative direct/indirect procurement work."},
+        {"url": "https://www.lio.ai/customers/basf-coatings", "kind": "official vendor-published customer story", "access": "opened 2026-11-01", "supports": "Guided-buying intake, policy application and SAP requisition workflow; customer claims have not been independently audited."}
+      ],
+      "fit_hypothesis": "Procurement integration engineers can test whether an independent execution authorization adds anything to existing ERP approval and requisition controls. This is a lower-priority adjacent hypothesis, not an assumed buyer profile.",
+      "target_roles": ["Product/engineering owner for procurement agents", "Enterprise integration architect for ERP/P2P workflows"],
+      "public_entrypoints": [{"url": "https://www.lio.ai/demo", "kind": "official company demo/contact form", "access": "opened 2026-11-01"}],
+      "qualifying_questions": ["Do agents reach a payment executor, or stop at an approved requisition/PO?", "Which authority and audit requirements cannot already be enforced by Lio plus the ERP?", "Is any sandbox integration possible without customer data or ERP access?"],
+      "disqualifiers": ["Native procurement policies and ERP approvals already solve the need.", "Agents stop at requisitions and do not initiate payment execution.", "Customer-specific ERP implementation cost is incompatible with a developer-first MVP.", "If only competitive product feedback is relevant, treat this organization as an adjacent expert, not a qualified buyer."],
+      "geography_access_rub": "International enterprise procurement; legal geography, Russian availability, data-residency fit and RUB payment workflows are NOT VERIFIED.",
+      "unknowns": ["Company size", "Budget", "Unmet need", "Willingness to pay", "Payment-execution boundary", "Ability to run a small developer-led experiment"],
+      "recruitment_purpose": "Lower-priority adjacent-segment product interview; become a buyer candidate only after an independent permission-layer need is demonstrated."
+    },
+    {
+      "id": "RC5",
+      "organization": "Pactum",
+      "priority": 5,
+      "segment": "Procurement-agent product/integration team; adjacent segment",
+      "screening_state": "NOT_QUALIFIED_ADJACENT_SEGMENT",
+      "observed_workflow": "Official indirect-procurement product and contact pages describe agents taking requests from intake to purchase order, checking them against policy and recording outcomes in Coupa or SAP Ariba. The product already exposes a policy rulebook and configured negotiation guardrails.",
+      "evidence": [
+        {"url": "https://pactum.com/indirect-procurement", "kind": "official product page; procurement-agents URL redirects here", "access": "opened 2026-11-01", "supports": "Procurement agents, policy rulebook and guardrails are described."},
+        {"url": "https://pactum.com/contact-us", "kind": "official company demo/contact page and product FAQ", "access": "opened 2026-11-01", "supports": "Request-to-PO workflow and native Coupa/SAP Ariba approval-chain controls are described."}
+      ],
+      "fit_hypothesis": "Only an uncovered boundary between procurement approval and an external payment executor would justify an independent permission layer. Existing policy functionality creates strong overlap and a likely disqualification; useful primarily for learning boundaries.",
+      "target_roles": ["Product lead for procurement agents", "Engineering/integration lead for Coupa/SAP Ariba and API workflows"],
+      "public_entrypoints": [{"url": "https://pactum.com/contact-us", "kind": "official company contact/demo page", "access": "opened 2026-11-01"}],
+      "qualifying_questions": ["Is there any external financial execution outside existing P2P policy and approval controls?", "What would an independent layer need to do that the current rulebook and system of record cannot?", "Does the team have a real unresolved requirement, or is this only an adjacent competitive discussion?"],
+      "disqualifiers": ["Native policy rulebook, guardrails and P2P approvals already cover requirements.", "Workflow ends at a purchase order; no delegated payment-execution boundary exists.", "The request is for a competitor comparison rather than an actual integration need.", "If no separate need is found, move to the adjacent-expert list and do not count as buyer validation."],
+      "geography_access_rub": "International enterprise procurement. Local Russian deployment, commercial access, data requirements and RUB support are NOT VERIFIED.",
+      "unknowns": ["Company size", "Budget", "Unmet need", "Willingness to pay", "External payment boundary", "Product integration appetite"],
+      "recruitment_purpose": "Lowest-priority adjacent-segment qualification interview; do not present as bank, customer or design partner."
+    }
+  ],
+  "not_counted": [
+    {"organization": "Perplexity", "reason": "Official Instant Buy page confirms U.S. agentic checkout, but this is an enterprise benchmark beyond the intended initial design-partner focus; no evidence of unmet need or practical access to an implementation team.", "evidence_url": "https://www.perplexity.ai/help-center/en/articles/10352906-what-is-instant-buy", "public_community_url": "https://community.perplexity.ai/"},
+    {"organizations": ["Payman", "Pink", "Skyfire", "Nekuda", "Rye"], "reason": "Direct or overlapping payment/control infrastructure. Possible ecosystem experts, excluded from buyer-candidate count."}
+  ],
+  "next_gate": "After explicit owner authorization for outreach, use a neutral interview invitation and obtain consent. Qualify an existing workflow, an actual unsolved control problem, an accountable integration owner and a safe sandbox before offering an experiment. No outreach has been sent."
+}

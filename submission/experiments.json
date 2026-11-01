@@ -1,0 +1,297 @@
+{
+  "as_of": "2026-11-01",
+  "demand_status": "NOT_VERIFIED",
+  "human_interviews_completed": 0,
+  "contacts_messaged": 0,
+  "provenance_note": "Experiments and pricing thresholds are proposed management decision rules; only TECH-01 has observed local results",
+  "experiments": [
+    {
+      "id": "DISC-01",
+      "name": "Проблемные интервью primary segment",
+      "hypotheses": [
+        "P1",
+        "P2",
+        "P3",
+        "B1"
+      ],
+      "type": "real_human_research",
+      "status": "NOT_STARTED_NO_RESPONDENT_DATA",
+      "participants_plan": {
+        "developer_product_primary": 7,
+        "bank_api_iam_experts_separate": 3
+      },
+      "recruitment_requirements": [
+        "Own current/recent agent or procurement automation workflow",
+        "Concrete last case or inspectable workflow artifact",
+        "Named technical/process owner",
+        "No generic AI enthusiasm counted as qualified problem"
+      ],
+      "procedure": [
+        "Obtain consent for notes; recording only with separate consent",
+        "Ask about last concrete case, workaround, frequency, consequences and owner",
+        "Separate observations/quotes from interpretation",
+        "Code independent organisations, do not double count multiple people from same company",
+        "Keep bank/API/IAM expert requirements separate from buyer willingness to pay"
+      ],
+      "evidence_required": [
+        "consent",
+        "role_and_organisation_pseudonym",
+        "case_date_or_recency",
+        "workflow_artifact_reference_if_allowed",
+        "workaround",
+        "frequency",
+        "consequence",
+        "owner",
+        "counterevidence",
+        "agreed_next_step"
+      ],
+      "decision_gate": {
+        "management_threshold": "Within 7 primary interviews: 4 distinct recent case IDs from at least 3 independent organisations, plus 2 specific evaluation next steps from different organisations. Do not double count the same case or organisation.",
+        "statistical_claim": false,
+        "note": "Working team decision rule, not market share or promised outcome"
+      },
+      "failure_decision": "Change segment/job before expanding integrations",
+      "actual_results": null
+    },
+    {
+      "id": "UX-01",
+      "name": "Независимый SDK onboarding",
+      "hypotheses": [
+        "S1",
+        "P3"
+      ],
+      "type": "observed_independent_developer_task",
+      "status": "NOT_STARTED_NO_INDEPENDENT_PARTICIPANTS",
+      "participants_plan": {
+        "independent_developers": 2
+      },
+      "scope": "One test organisation, one owner/agent/mandate, local provider; no Concierge",
+      "procedure": [
+        "Give repo/docs and bounded task before showing a live walkthrough",
+        "Start clock at task brief and available prerequisites",
+        "Participant registers agent/mandate, creates own intent and handles ASK",
+        "Participant submits one-use grant through separate executor and fetches result",
+        "Record interventions, blockers and completion time; debrief on own alternative"
+      ],
+      "success_measure": "Both participants complete defined task without author taking control; first own decision target within one working day, not measured yet",
+      "evidence_required": [
+        "start_finish_times",
+        "task_outputs_and_IDs",
+        "assistance_log",
+        "failures",
+        "participant_explanation",
+        "own_current_alternative"
+      ],
+      "failure_decision": "Fix onboarding/scope before adding product screens",
+      "actual_results": null
+    },
+    {
+      "id": "VALUE-01",
+      "name": "Baseline ручного процесса и controlled workflow comparison",
+      "hypotheses": [
+        "P2",
+        "S3"
+      ],
+      "type": "customer_process_observation",
+      "status": "NOT_STARTED_NEEDS_QUALIFIED_CUSTOMER",
+      "procedure": [
+        "Select one bounded repetitive workflow with process owner",
+        "Agree definitions and cases before testing",
+        "Record current approval, exception investigation and engineering support time",
+        "Run comparable synthetic cases through AgentPass and classify exceptions",
+        "Keep unsafe/ambiguous outcomes visible; do not select only easy successes"
+      ],
+      "metrics": [
+        "operator minutes per comparable case",
+        "engineering hours to integrate and maintain",
+        "unauthorised or false success cases",
+        "unknown recovery time and unresolved count",
+        "manual interventions per comparable case"
+      ],
+      "threshold": "Agree a minimum useful time/cost improvement with the actual owner before running; no invented percentage",
+      "evidence_required": [
+        "baseline_case_log",
+        "comparison_case_log",
+        "confounders",
+        "owner_acceptance_or_rejection"
+      ],
+      "actual_results": null
+    },
+    {
+      "id": "PRICE-01",
+      "name": "Два отдельных pricing discovery офера",
+      "hypotheses": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "type": "commercial_discovery",
+      "status": "NOT_STARTED_NO_OFFERS_SENT",
+      "offers": [
+        {
+          "segment": "developer self-service hypothesis",
+          "currency": "USD",
+          "proposed_base": 299,
+          "proposed_per_check": 0.002,
+          "status": "older hypothesis; not actual tariff or validated willingness to pay"
+        },
+        {
+          "segment": "enterprise pilot / supported deployment hypothesis",
+          "currency": "RUB",
+          "proposed_pilot": 600000,
+          "proposed_license_monthly": 180000,
+          "status": "separate scenario; scope and SLA not yet agreed"
+        }
+      ],
+      "procedure": [
+        "First confirm problem and budget owner",
+        "Compare offer scope to own make-or-buy alternative",
+        "Ask about purchase process and required evidence, not whether price sounds nice",
+        "Record actual next step, objections, budget approval and contract/payment status separately",
+        "Do not convert USD and RUB or combine segments without explicit currency and service scope assumptions"
+      ],
+      "strong_evidence": [
+        "signed paid-pilot order",
+        "actual payment",
+        "approved budget plus defined procurement action"
+      ],
+      "weak_evidence_not_sales": [
+        "positive feedback",
+        "free trial interest",
+        "unpriced LOI"
+      ],
+      "actual_results": null
+    },
+    {
+      "id": "TECH-01",
+      "name": "Контролируемый concurrency / replay / revoke drill",
+      "hypotheses": [
+        "S2"
+      ],
+      "type": "controlled_local_technical_experiment",
+      "status": "COMPLETED_LOCAL_ONLY",
+      "evidence_file": "technical_experiment_results.json",
+      "observed_at": "2026-11-01",
+      "actual_results": {
+        "parallel_intents": 20,
+        "amount_rub_each": 8000,
+        "daily_limit_rub": 25000,
+        "approve": 3,
+        "deny": 17,
+        "authorised_rub": 24000,
+        "remaining_rub": 1000,
+        "parallel_same_grant_submissions": 10,
+        "unique_execution_for_same_grant": 1,
+        "confirmed_simulated_transactions": 3,
+        "unique_receipts": 3,
+        "after_revoke": "DENY / MANDATE_REVOKED",
+        "elapsed_seconds": 2.86,
+        "client_p50_ms": 530.11,
+        "client_p95_ms": 692.91
+      },
+      "interpretation": "Local atomic budget / replay / revocation behaviour observed on actual API+worker+PostgreSQL",
+      "not_evidence_for": [
+        "customer problem",
+        "willingness to pay",
+        "external provider connection",
+        "performance SLO",
+        "independent developer usability",
+        "bank production readiness"
+      ],
+      "timing_limitation": "Client timing includes HTTP setup and lock waiting under burst; do not call it Policy Engine latency"
+    },
+    {
+      "id": "EXT-01",
+      "name": "Совместная внешняя test integration",
+      "hypotheses": [
+        "S2",
+        "S3",
+        "P4",
+        "B4"
+      ],
+      "type": "partner_test_api_acceptance",
+      "status": "BLOCKED_NO_AGREED_PARTNER_CREDENTIALS",
+      "scope": "One agreed TEST provider, one trusted merchant/order source, synthetic data only",
+      "procedure": [
+        "Agree trust boundary, IAM, owner and incident process",
+        "Confirm exact provider idempotency and callback/refetch semantics",
+        "Test pending, success, cancel, unknown timeout and reconciliation with real test credentials",
+        "Verify frozen intent binding and provider evidence; keep unresolved cases quarantined",
+        "Run independent review before any expanded deployment"
+      ],
+      "acceptance": "No success without authenticated matching provider evidence, no duplicate payment per grant, preserved budget on unknown and agreed operator recovery process",
+      "actual_results": null
+    }
+  ],
+  "metrics": [
+    {
+      "id": "M01",
+      "name": "Qualified problem evidence",
+      "numerator": "Independent qualified organisations with concrete recent case + workaround + consequence owner",
+      "denominator": "All independent qualified organisations interviewed in same primary segment",
+      "source": "human interview evidence ledger",
+      "status": "NO_HUMAN_DATA"
+    },
+    {
+      "id": "M02",
+      "name": "Activation",
+      "numerator": "Organisations completing own agent/mandate/intent/decision task",
+      "denominator": "Organisations starting independent integration experiment",
+      "source": "integration_started + integration_activated events and task log",
+      "status": "START_EVENT_AND_INDEPENDENT_TASK_LOG_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "M03",
+      "name": "Initial ASK share",
+      "numerator": "COUNT DISTINCT intent_id WHERE policy_evaluations.stage='initial' AND decision='ASK'",
+      "denominator": "COUNT DISTINCT intent_id WHERE stage='initial'",
+      "source": "policy_evaluations",
+      "status": "TECHNICALLY_COMPUTABLE_SANDBOX_ONLY"
+    },
+    {
+      "id": "M04",
+      "name": "Approval latency",
+      "definition": "resolved_at minus created_at for approved/rejected approvals; show unresolved pending separately",
+      "source": "approval_requests",
+      "status": "TECHNICALLY_COMPUTABLE_NO_CUSTOMER_COHORT"
+    },
+    {
+      "id": "M05",
+      "name": "Unknown incidence",
+      "numerator": "Distinct execution with any audit event execution.unknown in cohort",
+      "denominator": "Distinct execution with first execution.dispatch_claimed in cohort",
+      "source": "audit_events with execution resource_id; do not use only current status",
+      "status": "TECHNICALLY_COMPUTABLE_SANDBOX_ONLY"
+    },
+    {
+      "id": "M06",
+      "name": "Trace completeness",
+      "numerator": "Succeeded execution with matching snapshot/grant, provider ID/status, transaction and verification evidence",
+      "denominator": "All succeeded execution in same environment/cohort",
+      "source": "payment_executions + grants + transactions + verification audit",
+      "status": "PARTIAL: current code validates test/hash; independent immutable verification record not fully persisted"
+    },
+    {
+      "id": "M07",
+      "name": "API decision latency",
+      "definition": "p50/p95/p99 request_logs.duration_ms for POST /v1/intents, fixed environment/concurrency, separate HTTP status classes",
+      "source": "request_logs",
+      "status": "END_TO_END_API_NOT_ENGINE_CPU_SLO"
+    },
+    {
+      "id": "M08",
+      "name": "Commercial conversion",
+      "numerator": "Paid signed pilots / licences, separately",
+      "denominator": "Qualified primary-segment opportunities in defined cohort",
+      "source": "commercial evidence / contracts / actual payments",
+      "status": "NO_CONFIRMED_SALES"
+    },
+    {
+      "id": "GUARD-01",
+      "name": "Safety guardrails",
+      "definition": "Unauthorised execution count, duplicate provider purchase per grant count, false success count; all must remain zero in agreed test set",
+      "source": "joint fault / reconciliation evidence",
+      "status": "LOCAL_TEST_EVIDENCE_ONLY"
+    }
+  ]
+}
