@@ -1,6 +1,6 @@
 # AgentPass
 
-[![AgentPass CI](https://github.com/shevelevmotya/agentpass/actions/workflows/ci.yml/badge.svg)](https://github.com/shevelevmotya/agentpass/actions/workflows/ci.yml)
+[![AgentPass CI](https://github.com/motyashevelevv-star/agentpass/actions/workflows/ci.yml/badge.svg)](https://github.com/motyashevelevv-star/agentpass/actions/workflows/ci.yml)
 
 Платформа контроля финансовых полномочий AI-агентов: мандаты, лимиты,
 детерминированные APPROVE / ASK_USER / DENY, одноразовое согласие,
@@ -18,7 +18,7 @@
 | 10 интервью с ИИ-респондентами, роли подписаны | [Общий PDF](submission/AgentPass_Interviews.pdf) · [Протоколы](submission/AgentPass_AI_Panel.zip) |
 | Короткий питч и вопросы жюри | [Текст](submission/AgentPass_Pitch_3min.txt) · [Вопросы и ответы](submission/AgentPass_Jury_Questions.pdf) |
 
-[Каталог материалов](submission/README.md) · [Скачать комплект в Releases](https://github.com/shevelevmotya/agentpass/releases).
+[Каталог материалов](submission/README.md) · [Скачать комплект в Releases](https://github.com/motyashevelevv-star/agentpass/releases).
 Реальных клиентских интервью и подтверждённых продаж нет. Ролевые ответы ИИ
 выделены отдельно и не считаются доказательством спроса или готовности платить.
 

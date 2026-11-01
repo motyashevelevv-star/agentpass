@@ -9,14 +9,14 @@
 | Название | AgentPass |
 | Презентация | [PDF](AgentPass_Presentation.pdf) · [PPTX](AgentPass_Presentation.pptx) |
 | Демо | [Запись работающего приложения, MP4](AgentPass_Demo.mp4) |
-| Исходный код | https://github.com/shevelevmotya/agentpass |
+| Исходный код | https://github.com/motyashevelevv-star/agentpass |
 | Аналитические артефакты | [Общий отчёт](AgentPass_Analytics.pdf) · [ZIP](AgentPass_Analytics.zip) |
 | Финансовая модель | [Три сценария, XLSX](AgentPass_Financial_Model.xlsx) |
 | Исследования | [Гайды](AgentPass_Customer_Discovery.pdf) · [Рабочая книга](AgentPass_Research_Workbook.xlsx) |
 | Ролевые интервью | [10 интервью с ИИ-респондентами](AgentPass_Interviews.pdf) · [PDF/JSON/XLSX](AgentPass_AI_Panel.zip) |
 
 Полный комплект, исходный ZIP без Markdown и текст полей формы размещаются
-в [Releases](https://github.com/shevelevmotya/agentpass/releases).
+в [Releases](https://github.com/motyashevelevv-star/agentpass/releases).
 
 ## Статус исследования
 
