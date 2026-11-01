@@ -1,0 +1,85 @@
+name: agentpass
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: agentpass
+      POSTGRES_USER: agentpass
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-sandbox-only}
+    ports: ["127.0.0.1:${DB_PORT:-5432}:5432"]
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agentpass -d agentpass"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.api
+    environment: &api-environment
+      DATABASE_URL: postgresql+psycopg://agentpass:${POSTGRES_PASSWORD:-local-sandbox-only}@db:5432/agentpass
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY:?Run infra/bootstrap.py first}
+      ENVIRONMENT: ${ENVIRONMENT:-sandbox}
+      SEED_DEMO: ${SEED_DEMO:-true}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-}
+      WEB_ORIGIN: ${WEB_ORIGIN:-http://localhost:3000}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      WEBHOOK_HOST_ALLOWLIST: ${WEBHOOK_HOST_ALLOWLIST:-}
+      EXECUTION_SIGNING_KEY: ${EXECUTION_SIGNING_KEY:-}
+      EXECUTION_KEY_ID: ${EXECUTION_KEY_ID:-local-v1}
+      EXECUTION_GRANT_SECONDS: ${EXECUTION_GRANT_SECONDS:-120}
+      ALLOW_PUBLIC_REGISTRATION: ${ALLOW_PUBLIC_REGISTRATION:-true}
+      REQUIRE_MFA: ${REQUIRE_MFA:-false}
+      YOOKASSA_SANDBOX_ENABLED: ${YOOKASSA_SANDBOX_ENABLED:-false}
+      YOOKASSA_SHOP_ID: ${YOOKASSA_SHOP_ID:-}
+      YOOKASSA_SECRET_KEY: ${YOOKASSA_SECRET_KEY:-}
+      PAYMENT_RETURN_URL: ${PAYMENT_RETURN_URL:-}
+      SANDBOX_RECEIVER_URL: http://api:8000/v1/sandbox/webhook-receiver
+    command:
+      [
+        "sh",
+        "-c",
+        "alembic -c apps/api/alembic.ini upgrade head && uvicorn agentpass.main:app --host 0.0.0.0 --port 8000",
+      ]
+    depends_on:
+      db: { condition: service_healthy }
+    ports: ["127.0.0.1:${API_PORT:-8000}:8000"]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    read_only: true
+    tmpfs: [/tmp]
+    restart: unless-stopped
+  worker:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.api
+    environment: *api-environment
+    command: ["python", "-m", "agentpass.webhooks"]
+    depends_on:
+      api: { condition: service_healthy }
+    read_only: true
+    tmpfs: [/tmp]
+    restart: unless-stopped
+  web:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.web
+    environment:
+      API_ORIGIN: http://api:8000
+    ports: ["${WEB_BIND_ADDRESS:-127.0.0.1}:${WEB_PORT:-3000}:3000"]
+    depends_on:
+      api: { condition: service_healthy }
+    restart: unless-stopped
+volumes:
+  postgres-data:
